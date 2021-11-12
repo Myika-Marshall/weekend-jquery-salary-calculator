@@ -3,8 +3,8 @@ $(document).ready(onReady);
 let employee = {
     firstName: $('#first-name').val(), 
     lastName: $('#last-name').val(),
-    ID:$('#id').val(),
-    Title: $('#title').val(),
+    idNum:$('#id').val(),
+    title: $('#title').val(),
     annualSalary:$('#annual-salary').val(),
 
 }
@@ -14,28 +14,20 @@ function onReady(){
     $('#submit-button').on('click', employeeData)
 
 }
-function employeeData(){
+function employeeData(employees){
     console.log('in engageEmployee');
 // I want to create an append that adds employee data to my table
-    let newEmployee=
+    for (let empoyee of employess){
+        $('#tbody').append(
     `<tr>
-    <td>${employee.firstName}</td>
-    </tr>
-    <tr>  
+    <td>${employee.firstName}</td>  
     <td>${employee.lastname}</td>
-    </tr>
-    <tr>
-    <td>${employee.ID}</td>
-    </tr>
-    <tr>
-        <td>${employee.Title}</td>
-    </tr>
-    <tr>
-        <td>${employee.annualSalary}/td></tr>
-    <tr>
-        <td>empty text</td>
-    </tr>`
-employeeData.append();
+    <td>${employee.idNum}</td>
+    <td>${employee.title}</td>
+    <td>${employee.annualSalary}/td>
+    <td>empty text</td>
+    </tr>`);
+    }
 // I need to calculate the Annual Salaries
 // I need to indicate if the calculation takes me over 20,000
 } 
